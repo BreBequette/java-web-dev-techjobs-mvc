@@ -29,24 +29,39 @@
 
     <table th:fragment="jobs-table" class="job-listing" th:each="job: ${jobs}">
         <tr>
-            <td th:text="${'ID: ' + job.id}"></td>
+            <td class="job-category">ID</td>
+            <td th:text="${job.id}"></td>
         </tr>
         <tr>
-            <td th:text="${'Name: ' + job.name}"></td>
+            <td class="job-category">Name</td>
+            <td th:text="${job.name}"></td>
         </tr>
         <tr>
-            <td th:text="${'Employer: ' + job.employer}"></td>
+            <td class="job-category">Employer</td>
+            <td>
+                <a th:href="@{jobs(column='employer',value=${job.employer})}" th:text="${job.employer}"></a>
+            </td>
         </tr>
         <tr>
-            <td th:text="${'Location: ' + job.location}"></td>
+            <td class="job-category">Location</td>
+            <td>
+                <a th:href="@{jobs(column='location',value=${job.location})}" th:text="${job.location}"></a>
+            </td>
         </tr>
         <tr>
-            <td th:text="${'Position Type: ' + job.positionType}"></td>
+            <td class="job-category">Position Type</td>
+            <td>
+                <a th:href="@{jobs(column='positionType',value=${job.positionType})}" th:text="${job.positionType}"></a>
+            </td>
         </tr>
         <tr>
-            <td th:text="${'Skill: ' + job.coreCompetency}"></td>
+            <td class="job-category">Skill</td>
+            <td>
+                <a th:href="@{jobs(column='coreCompetency',value=${job.coreCompetency})}" th:text="${job.coreCompetency}"></a>
+            </td>
         </tr>
     </table>
+
 
 </body>
 </html>
